@@ -1,18 +1,16 @@
 package es.aragon.demo.controller;
 
-import javax.validation.constraints.NotNull;
 
-import org.hibernate.validator.constraints.NotEmpty;
 
 public class Film {
 
-	@NotEmpty
+
 	private String title;
 	
-	@NotNull
+
 	private Integer year;
 	
-	@NotEmpty
+
 	private String director;
 
 	private Film() {
