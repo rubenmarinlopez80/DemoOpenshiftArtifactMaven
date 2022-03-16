@@ -3,8 +3,6 @@ package es.aragon.demo.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -32,7 +30,7 @@ public class FilmsController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public void addFilm(@RequestBody @Valid Film film) {
+	public void addFilm(@RequestBody Film film) {
 		DUMMY_FILMS.add(film);
 	}
 	
