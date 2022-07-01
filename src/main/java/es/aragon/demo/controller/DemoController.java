@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import es.aragon.paea.commons.csv.CSVGenerator;
+import java.net.*;
 
 @Controller
 public class DemoController {
@@ -26,6 +27,9 @@ public class DemoController {
     	System.out.println("prueba"+csvGenerado);
     	model.addAttribute("fecha", LocalDateTime.now());
     	model.addAttribute("csv", csvGenerado);
+	InetAddress iaLocalAddress = null;
+	iaLocalAddress = InetAddress.getLocalHost();
+	model.addAttribute("ip", iaLocalAddress);
     	return "index";
 
     }
