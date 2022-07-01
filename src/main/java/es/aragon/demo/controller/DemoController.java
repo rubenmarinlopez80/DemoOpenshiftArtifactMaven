@@ -28,7 +28,15 @@ public class DemoController {
     	model.addAttribute("fecha", LocalDateTime.now());
     	model.addAttribute("csv", csvGenerado);
 	InetAddress iaLocalAddress = null;
-	iaLocalAddress = InetAddress.getLocalHost();
+	try
+        {
+            iaLocalAddress =
+                    InetAddress.getLocalHost();
+        }
+        catch(UnknownHostException ex)
+        {
+            System.out.println(ex.toString());
+        }
 	model.addAttribute("ip", iaLocalAddress);
     	return "index";
 
